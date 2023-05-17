@@ -1,5 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { Link, Route } from 'react-router-dom';
+import Card from "./Card";
+import './LandingPage.css';
 import axios from 'axios';
 
 const LandingPage = () => {
@@ -21,15 +23,15 @@ const LandingPage = () => {
 
     return (
         <div>
-            <h1>Pokemon Generations</h1>
+            <h1 className="generationsTitle">Pokemon Generations</h1>
             {generationsData ? (
-                <div>
+                <div className="cardContainer">
                     {generationsData.results.map((generation) => (
-                        <h1 key={generation.name}>
-                            <Link to={`/generation/${generation.name}`}>
+                        <Card key={generation.name}>
+                            <Link className="generationsCard" to={`/generation/${generation.name}`}>
                                 {generation.name.toUpperCase()}
                             </Link>
-                        </h1>
+                        </Card>
                     ))}
                 </div>
             ) : (

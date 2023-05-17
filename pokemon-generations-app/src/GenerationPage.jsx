@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Card from "./Card";
 import axios from "axios";
 
 const GenerationPage = () => {
@@ -22,11 +23,13 @@ const GenerationPage = () => {
 
     return (
         <div>
-            <h1>Pokemon Species in {id.toUpperCase()}</h1>
+            <h1 className="generationsTitle">Pokemon Species in {id.toUpperCase()}</h1>
             {generationsData ? (
-                <div>
+                <div className="cardContainer">
                     {generationsData.pokemon_species.map((species) => (
-                        <h2 key={species.name}>{species.name}</h2>
+                        <Card className='generationsCard' key={species.name} imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${species.url.split('/')[6]}.png`}>
+                            <h2 className="speciesCard" key={species.name}>{species.name.toUpperCase()}</h2>
+                        </Card>
                     ))}
                 </div>
             ) : (

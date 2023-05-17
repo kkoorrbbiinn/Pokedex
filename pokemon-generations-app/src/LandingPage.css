@@ -1,0 +1,44 @@
+.cardContainer {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    width: 100vw;
+    padding: 10px;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid white;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    width: 28vw;
+    background-color: rgb(94, 94, 94);
+}
+
+.generationsCard {
+    position: relative;
+    color: coral;
+    top: 45%;
+}
+
+.speciesCard {
+    color: coral;
+}
+
+.generationsTitle {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: rgb(51, 51, 51);
+}
+
+.pokemonImg {
+    height: 70%;
+}
